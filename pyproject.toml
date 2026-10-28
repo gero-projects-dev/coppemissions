@@ -23,3 +23,15 @@ include = ["coppemissions*"]
 [project.urls]
 Homepage = "https://github.com/SEU_USUARIO/coppemissions"
 Issues = "https://github.com/SEU_USUARIO/coppemissions/issues"
+
+dependencies = [
+    "cantera==3.1.0",
+    "gascompressibility==1.0.0",
+    "matplotlib==3.10.5",
+    "numpy==1.26.4",
+    "pandas==2.2.3",
+    "pint==0.24.4",
+    "pyromat==2.2.6",
+    "openpyxl==3.1.5",
+    "scipy==1.14.1",
+]
