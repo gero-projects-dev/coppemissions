@@ -215,7 +215,11 @@ class Field():
                 
         self.data = eval(data_dict)
 
-        field_data =  pd.read_excel(self.data['field_data_path'])
+        field_data_path = Path(self.data['field_data_path'])
+        if not field_data_path.is_absolute():
+            field_data_path = Path(__file__).resolve().parents[2] / "data" / field_data_path.name
+
+        field_data = pd.read_excel(field_data_path)
         
         self.field_start = field_data['Time'][0]
         self.oil_prod = (field_data['Oil Rate'].to_numpy()*ureg(self.data['field_data_units']['oil'])).to(ureg.oil_bbl/ureg.day)
