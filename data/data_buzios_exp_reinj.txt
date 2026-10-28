@@ -1,0 +1,103 @@
+{
+
+## GENERAL DATA
+'field_data_units':{'oil':'m**3/d', 'gas':'m**3/d', 'water':'m**3/d', 'gas_inj':'m**3/d', 'water_inj':'m**3/d', 'gas_lift':'m**3/d'},
+'days':366*ureg('day'),
+'field_data_path':'../data/dados_buzios_exp_reinj.xlsx',
+'turbine_carbon_footprint': 617*(24*1e-6)*ureg('metric_ton/(kW*day)'),
+'power_from_shore_footprint': 801.6007e-6*ureg('metric_ton/(kW*day)'),
+'electrification_percentage':0.00,
+'heating_percentage':0.3,
+'oil_API':28.00,
+'gas_molar_fraction': {"N2":0.0055, "O2":0, "CO2":0.0183, "H2O":0, "CH4":0.8415, "C2H6":0.0701, "C3H8":0.0646, "CO":0, "H2":0},
+'wellhead_temperature': 294.05*ureg('K'),
+'wellhead_pressure': 470*ureg('bar').to('psi'),
+'BOE_gas': 0.000178*ureg('oil_bbl/ft**3'),
+
+### OIL EXPORT *conferir
+'oil_export_pressure': 200*ureg('psi'),
+'oil_export_pump_efficiency': 0.55,
+
+### SEAWATER CAPTURE
+'water_capture_pressure': 500*ureg('psi'),
+'water_capture_pump_efficiency': 0.50,
+
+### WATER INJECTION
+# "injection_fields":5,
+# "field_depth": 6440*ureg('ft'),
+# "diameter": (6.625*ureg('in')).to('ft'),
+# "PI": 8*ureg('oil_bbl/(day * psi)'),
+# "P_res": 4.8e3*ureg('psi'),
+# "pump_efficiency":0.50,
+'water_injection_pressure': 700*ureg('bar').to('psi'),
+'water_injection_efficiency': 0.50,
+
+### SEPARATOR
+"separator_dict":{
+'inlet_pressure_criterion':[500*ureg('psi'), 200*ureg('psi')],
+'stage_pressures':[507.632*ureg('psi'), 181.2972*ureg('psi'), 21.7557*ureg('psi')],
+'liquid_separator_pressure': 100*ureg('psi'),
+'gas_separator_temperature': 300*ureg('K'),
+'separator_outlet_pressure': 500*ureg('psi'),
+'fractional_loss_rate': 0.0002,
+'separation_compressor_efficiency':0.60,
+},
+
+### FLARE
+"flaring_to_oil_ratio": 14*ureg('ft**3/oil_bbl'),
+"flare_total_volume":0.0*ureg('m**3/day').to('ft**3/day'),
+
+### CRUDE OIL STORAGE
+'storage_loss_rate': 0.945*ureg('kg/oil_bbl'),
+'storage_gas_recovery_fraction': 0.99,
+'ch4_fraction_in_storage_gas': 0.55,
+'storage_gas_flare_fraction': 0.009,
+"storage_compressor_efficiency":0.50,
+"flash_gas_initial_pressure":200*ureg("psi"),
+"flash_gas_outlet_pressure":500*ureg("psi"),
+
+### GAS EXPORT
+'gas_export_inlet_pressure': 384.35*ureg('psi'),
+'gas_export_outlet_pressure':150*ureg('bar').to('psi'),
+'gas_export_compressor_efficiency':0.65,
+
+### GAS INJECTION
+'gas_injection_inlet_pressure':384.35*ureg('psi'),
+'gas_injection_outlet_pressure':700*ureg('bar').to('psi'),
+'gas_injection_compressor_efficiency':0.50,
+# 'gas_injection_reservoir_pressure': 1856*ureg('psi'),
+
+### GAS LIFT
+'gas_lift_inlet_pressure':384.35*ureg('psi'),
+'gas_lift_outlet_pressure':700*ureg('bar').to('psi'),
+'gas_lift_compressor_efficiency':0.50,
+
+### VENTING
+'venting_surface_piping_leakage': 0.0*ureg('metric_ton/day'), 
+'venting_fraction': 0.0001,
+
+### HEATING
+'electrical_heating?': 0,
+'heater_efficiency': 0.95,      # Electrical Heater Thermal Efficiency
+'heating_demand': [38.44334, 45.78835, 48.75329, 48.31655, 46.54373, 47.30037, 48.82793, 51.01354, 50.06837, 55.34365, 50.95427, 49.82512, 46.42252, 45.39971, 43.02707, 43.40365, 42.11122, 41.71362, 41.96494, 41.50468, 40.46444, 42.15014, 40.81361, 40.5158, 38.60834, 38.39255, 38.59294, 38.09718, 37.47242, 37.44782],
+
+### GAS PROCESSING
+"gas_processing_arq": ['Gas Gathering', "Dehydration", "Membrane"],
+"gas_gathering_fractional_loss_rate":0.0001, #era 0.002554 no OPGEE
+"dehydration_TEG_vol_rate":(689*ureg('gallons/day')).to('ft**3/day'),
+"dehydration_TEG_discharge_pressure":786*ureg("psi"),
+"dehydration_TEG_efficiency":0.5,
+"dehydration_fractional_loss_rate":0.000418,
+"membrane_chiller_outlet_temperature":323.15*ureg('K'),
+#"membrane_outlet_pressure": 26.5*ureg('bar').to('psi'), 
+"membrane_outlet_pressure": 500*ureg('psi'), 
+"membrane_eta_compressor": 0.75,
+"amine_kvalue_amine_AGR": 0.000145 * ureg('gallons per minute')/ureg('ft**3/day'), 
+"amine_contactor_pressure": 500*ureg('psi'), 
+"amine_eta_reboiler_AGR": 1.25, 
+"amine_fractional_loss_rate": 0.000418,
+
+### UTILITIES 
+"utilities_total_power": 11*ureg('MW')
+
+}

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coppemissions"
+version = "0.1.0"
+description = "GHG Emissions estimator for STSW Petrobras project."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Pedro Enrique Marques", email = "pedroemonforte@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["coppemissions*"]
+
+[project.urls]
+Homepage = "https://github.com/SEU_USUARIO/coppemissions"
+Issues = "https://github.com/SEU_USUARIO/coppemissions/issues"
