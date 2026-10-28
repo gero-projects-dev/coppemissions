@@ -1,4 +1,6 @@
-# This document was generated manually. Manual edits may be lost.
+
+-e .
+streamlit
 cantera==3.1.0
 gascompressibility==1.0.0
 matplotlib==3.10.5
