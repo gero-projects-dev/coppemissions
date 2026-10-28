@@ -11,7 +11,11 @@ import matplotlib.pyplot as plt
 import copy
 from .gas_turbine import *
 
-fluid_data = pd.read_excel('../data/fluid_data.xlsx')
+from pathlib import Path
+
+fluid_data = pd.read_excel(
+    Path(__file__).resolve().parents[2] / "data" / "fluid_data.xlsx"
+)
 
 
 
@@ -203,6 +207,8 @@ class Field():
     """
     def __init__(self,model_data_path):
         #self.data = pd.read_excel('dados campo presal.xlsx')
+        
+        model_data_path = str(Path(__file__).resolve().parents[2] / "data" / model_data_path)
         
         with open(model_data_path, 'r') as file:
                 data_dict = file.read()

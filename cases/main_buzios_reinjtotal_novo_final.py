@@ -11,7 +11,7 @@ print('############ INICIANDO COPPEMISSIONS (nome provisório)! ############')
 print('')
 
 # Field definition
-CAMPO = ce.Field('../data/data_buzios_reinjtotal.txt')
+CAMPO = ce.Field('data_buzios_reinjtotal.txt')
 Stream_0 = ce.Stream('Initial', CAMPO, CAMPO.Gas, CAMPO.water_prod, CAMPO.oil_prod, CAMPO.gas_prod, CAMPO.wellhead_t, CAMPO.wellhead_p)
 print('\nFIELD DEFINITION: DONE!')
 

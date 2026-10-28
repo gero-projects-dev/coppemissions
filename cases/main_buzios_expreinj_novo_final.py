@@ -9,7 +9,7 @@ import numpy as np
 print('\n############ INICIANDO COPPEMISSIONS (nome provisório)! ############\n\n')
 
 # Field definition
-CAMPO = ce.Field('../data/data_buzios_exp_reinj.txt')
+CAMPO = ce.Field('data_buzios_exp_reinj.txt')
 Stream_0 = ce.Stream('Initial', CAMPO, CAMPO.Gas, CAMPO.water_prod, CAMPO.oil_prod, CAMPO.gas_prod, CAMPO.wellhead_t, CAMPO.wellhead_p)
 print('FIELD DEFINITION: DONE!')
 
