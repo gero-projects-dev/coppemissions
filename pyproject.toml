@@ -15,15 +15,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-
-[tool.setuptools.packages.find]
-where = ["src"]
-include = ["coppemissions*"]
-
-[project.urls]
-Homepage = "https://github.com/SEU_USUARIO/coppemissions"
-Issues = "https://github.com/SEU_USUARIO/coppemissions/issues"
-
 dependencies = [
     "cantera==3.1.0",
     "gascompressibility==1.0.0",
@@ -35,3 +26,12 @@ dependencies = [
     "openpyxl==3.1.5",
     "scipy==1.14.1",
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["coppemissions*"]
+
+[project.urls]
+Homepage = "https://github.com/SEU_USUARIO/coppemissions"
+Issues = "https://github.com/SEU_USUARIO/coppemissions/issues"
+
