@@ -148,7 +148,7 @@ class Stream():
     Class used to represent a stream.
     """
     def __init__(self, identificator, field, water_rate, oil_rate, gas_rate, T, P):
-        self.gas = field.gas
+        self.gas = field.Gas
         self.water_rate = water_rate
         self.oil_rate = oil_rate
         self.gas_rate = gas_rate
