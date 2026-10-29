@@ -11,7 +11,7 @@ print('')
 
 # Field definition
 CAMPO = ce.Field('data_buzios_reinjtotal.txt')
-Stream_0 = ce.Stream('Initial', CAMPO, CAMPO.water_prod, CAMPO.oil_prod, CAMPO.gas_prod, CAMPO.wellhead_t, CAMPO.wellhead_p)
+Stream_0 = ce.Stream('Initial', CAMPO, CAMPO.Gas, CAMPO.water_prod, CAMPO.oil_prod, CAMPO.gas_prod, CAMPO.wellhead_t, CAMPO.wellhead_p)
 print('\nFIELD DEFINITION: DONE!')
 
 # Separator
