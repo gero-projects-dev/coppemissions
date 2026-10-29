@@ -6,7 +6,7 @@ import coppemissions as ce
 from coppemissions.registry import ureg
 import numpy as np
 
-print('\n############ INICIANDO COPPEMISSIONS (nome provisório)! ############\n\n')
+print('\n############ INICIANDO COPPEMISSIONS! ############\n\n')
 
 # Field definition
 CAMPO = ce.Field('data_buzios_exp_reinj.txt')
