@@ -7,7 +7,7 @@ from coppemissions.registry import ureg
 import numpy as np
 
 print('')
-print('############ INICIANDO COPPEMISSIONS (nome provisório)! ############')
+print('############ INICIANDO COPPEMISSIONS! ############')
 print('')
 
 # Field definition
