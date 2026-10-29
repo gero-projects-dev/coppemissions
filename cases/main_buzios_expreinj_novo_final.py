@@ -3,7 +3,6 @@
 globals().clear()
 
 import coppemissions as ce
-from coppemissions.registry import ureg
 import numpy as np
 
 print('\n############ INICIANDO COPPEMISSIONS! ############\n\n')
@@ -88,10 +87,10 @@ print('HEATING: DONE!')
 
 
 print('')
-print('TOTAL EMISSIONS = ' + str(sum(CAMPO.TOTAL_EMISSIONS.to('metric_ton/year'))*ureg('year')))
-print('TOTAL FLARING EMISSIONS = ' + str(sum(CAMPO.EMISSIONS['Flaring'].to('metric_ton/year'))*ureg('year')))
-print('TOTAL COMBUSTION EMISSIONS = ' + str(sum(CAMPO.TOTAL_POWER_EMISSIONS.to('metric_ton/year'))*ureg('year')))
-print('TOTAL VENTING & FUGITIVES EMISSIONS = ' + str(sum(CAMPO.TOTAL_VF_EMISSIONS.to('metric_ton/year'))*ureg('year')))
+print('TOTAL EMISSIONS = ' + str(sum(CAMPO.TOTAL_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL FLARING EMISSIONS = ' + str(sum(CAMPO.EMISSIONS['Flaring'].to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL COMBUSTION EMISSIONS = ' + str(sum(CAMPO.TOTAL_POWER_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL VENTING & FUGITIVES EMISSIONS = ' + str(sum(CAMPO.TOTAL_VF_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
 
 print('')
 print('IGEE (annual) = ' + str(CAMPO.IGEE_ANNUAL))
