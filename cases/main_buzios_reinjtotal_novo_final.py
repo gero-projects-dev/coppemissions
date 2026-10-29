@@ -3,7 +3,6 @@
 globals().clear()
 
 import coppemissions as ce
-from coppemissions.registry import ureg
 import numpy as np
 
 print('')
@@ -36,13 +35,13 @@ CAMPO.POWER_DICT['Flashing'] = FLASH_COMP.compressor_energy(CAMPO.data['storage_
 print('FLASH GAS: DONE!')
 
 # Seawater capture
-Water_Capture_Rate = (CAMPO.water_inj - Stream_3.water_rate)*1 + 70e3*ce.ureg('oil_barrel / day')
-WTR_CAP_PUMP = ce.Pump("Water_capture", CAMPO,Water_Capture_Rate,0*ce.ureg('psi'), CAMPO.data['water_capture_pressure'], CAMPO.data['water_capture_pump_efficiency'])
-Stream_9 = ce.Stream('9', CAMPO, CAMPO.Gas, CAMPO.water_inj, 0*CAMPO.oil_prod, 0*CAMPO.gas_inj, 300*ce.ureg('K'), CAMPO.data['water_capture_pressure'])
+Water_Capture_Rate = (CAMPO.water_inj - Stream_3.water_rate)*1 + 70e3*ce.('oil_barrel / day')
+WTR_CAP_PUMP = ce.Pump("Water_capture", CAMPO,Water_Capture_Rate,0*ce.('psi'), CAMPO.data['water_capture_pressure'], CAMPO.data['water_capture_pump_efficiency'])
+Stream_9 = ce.Stream('9', CAMPO, CAMPO.Gas, CAMPO.water_inj, 0*CAMPO.oil_prod, 0*CAMPO.gas_inj, 300*ce.('K'), CAMPO.data['water_capture_pressure'])
 print('WATER CAPTURE: DONE!')
 
 # Water Injection
-WI_PUMP = ce.Pump("Water_injection", CAMPO,Stream_9.water_rate,0*ce.ureg('psi'), CAMPO.data['water_injection_pressure'], CAMPO.data['water_injection_efficiency'])
+WI_PUMP = ce.Pump("Water_injection", CAMPO,Stream_9.water_rate,0*ce.('psi'), CAMPO.data['water_injection_pressure'], CAMPO.data['water_injection_efficiency'])
 print('WATER INJECTION: DONE!')
 
 # Flare, Vent, Gas Processing
@@ -77,10 +76,10 @@ print('HEATING: DONE!')
 
 
 print('')
-print('TOTAL EMISSIONS = ' + str(sum(CAMPO.TOTAL_EMISSIONS.to('metric_ton/year'))*ureg('year')))
-print('TOTAL FLARING EMISSIONS = ' + str(sum(CAMPO.EMISSIONS['Flaring'].to('metric_ton/year'))*ureg('year')))
-print('TOTAL COMBUSTION EMISSIONS = ' + str(sum(CAMPO.TOTAL_POWER_EMISSIONS.to('metric_ton/year'))*ureg('year')))
-print('TOTAL VENTING & FUGITIVES EMISSIONS = ' + str(sum(CAMPO.TOTAL_VF_EMISSIONS.to('metric_ton/year'))*ureg('year')))
+print('TOTAL EMISSIONS = ' + str(sum(CAMPO.TOTAL_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL FLARING EMISSIONS = ' + str(sum(CAMPO.EMISSIONS['Flaring'].to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL COMBUSTION EMISSIONS = ' + str(sum(CAMPO.TOTAL_POWER_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
+print('TOTAL VENTING & FUGITIVES EMISSIONS = ' + str(sum(CAMPO.TOTAL_VF_EMISSIONS.to('metric_ton/year'))*ce.ureg('year')))
 
 print('')
 print('IGEE (annual) = ' + str(CAMPO.IGEE_ANNUAL))
